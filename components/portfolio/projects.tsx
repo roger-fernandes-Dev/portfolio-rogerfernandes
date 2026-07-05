@@ -9,8 +9,8 @@ const projects = [
       "Design clean, intuitivo, flexível, escalável. Foco em performance e UX.",
     image: "/imagem-portfolio.png",
     tags: ["Next.js", "TypeScript", "TailwindCss"],
-    demo: "#",
-    repo: "#",
+    demo: "https://portfolio-rogerfernandes.vercel.app/",
+    repo: "https://github.com/roger-fernandes-Dev/portfolio-rogerfernandes",
   },
   {
     title: "Plataforma para times amadores",
