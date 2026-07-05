@@ -6,7 +6,7 @@ const studies = [
     title: "Bacharelado em Engenharia de Software",
     description:
       "Estrutura de dados, design de projeto, arquitetura de software, Métodos Ágeis, IAs.",
-    tags: ["Estrutura de dados", "Algoritmos", "Métodos Ágeis", "Design de sotware", "Modelagem de dados", "Scrum", "Kanban"],
+    tags: ["Estrutura de dados", "Algoritmos","Lógica de programação", "Métodos Ágeis", "Design de sotware", "Modelagem de dados", "Scrum", "Kanban"],
     icon: Award,
   },
   {
@@ -14,7 +14,7 @@ const studies = [
     title: "Bacharelado em Ciência da Computação",
     description:
       "Base sólida em algoritmos, estruturas de dados, redes e engenharia de software.",
-    tags: ["Algoritmos", "Engenharia de Software"],
+    tags: ["Algoritmos", "Estrutura de dados", "Lógica de programação", "Sistemas Operacionais", "Redes"],
     icon: GraduationCap,
   },
 ]
