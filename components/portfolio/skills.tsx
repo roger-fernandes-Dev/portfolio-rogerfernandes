@@ -13,7 +13,7 @@ const skillGroups = [
   },
   {
     title: "DevOps & Ferramentas",
-    items: ["Expo", "Git", "GitHub", "VsCode", "Vercel", "ChatGPT", "Gemini", "Métodos Ágeis"],
+    items: ["Expo", "Git", "GitHub", "VsCode", "Vercel", "ChatGPT", "Gemini", "Métodos Ágeis", "Scrum", "Kanban"],
   },
 ]
 

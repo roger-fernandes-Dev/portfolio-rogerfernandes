@@ -6,7 +6,7 @@ const studies = [
     title: "Bacharelado em Engenharia de Software",
     description:
       "Estrutura de dados, design de projeto, arquitetura de software, Métodos Ágeis, IAs.",
-    tags: ["AWS", "Cloud", "Infraestrutura"],
+    tags: ["Estrutura de dados", "Algoritmos", "Métodos Ágeis", "Design de sotware", "Modelagem de dados", "Scrum", "Kanban"],
     icon: Award,
   },
   {
