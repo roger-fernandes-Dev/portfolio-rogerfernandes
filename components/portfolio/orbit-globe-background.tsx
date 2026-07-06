@@ -46,13 +46,15 @@ export function OrbitGlobeBackground() {
     let frame = 0
     let width = 0
     let height = 0
+    let viewportHeight = 0
     let pixelRatio = 1
 
     const resize = () => {
       pixelRatio = Math.min(window.devicePixelRatio || 1, 2)
       width = window.innerWidth
+      viewportHeight = window.innerHeight
       height = Math.max(
-        window.innerHeight,
+        viewportHeight,
         document.documentElement.scrollHeight,
         document.body.scrollHeight,
       )
@@ -63,7 +65,13 @@ export function OrbitGlobeBackground() {
       context.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0)
     }
 
+    const getGlobeCenter = () => ({
+      x: width * (width < 768 ? 0.5 : 0.34),
+      y: width < 768 ? viewportHeight * 0.58 : height * 0.44,
+    })
+
     const projectPoint = (point: GlobePoint, rotation: number, radius: number) => {
+      const center = getGlobeCenter()
       const rotatedLon = point.lon + rotation
       const x = Math.cos(point.lat) * Math.cos(rotatedLon)
       const y = Math.sin(point.lat)
@@ -72,8 +80,8 @@ export function OrbitGlobeBackground() {
       const scale = radius / depth
 
       return {
-        x: width * (width < 768 ? 0.5 : 0.34) + x * scale,
-        y: height * 0.44 + y * scale,
+        x: center.x + x * scale,
+        y: center.y + y * scale,
         z,
         alpha: Math.max(0, (z + 1) / 2),
         pulse: point.pulse,
@@ -81,18 +89,19 @@ export function OrbitGlobeBackground() {
     }
 
     const draw = (time = 0) => {
-      const radius = Math.min(width * 1.08, height * 0.56)
+      const center = getGlobeCenter()
+      const radius = width < 768 ? width * 1.32 : Math.min(width * 1.08, height * 0.56)
       const rotation = mediaQuery.matches ? 0.8 : time * ROTATION_SPEED
       const projected = points.map((point) => projectPoint(point, rotation, radius))
 
       context.clearRect(0, 0, width, height)
 
       const haze = context.createRadialGradient(
-        width * (width < 768 ? 0.5 : 0.34),
-        height * 0.44,
+        center.x,
+        center.y,
         radius * 0.05,
-        width * (width < 768 ? 0.5 : 0.34),
-        height * 0.44,
+        center.x,
+        center.y,
         radius * 0.92,
       )
       haze.addColorStop(0, "rgba(216, 180, 254, 0.1)")
