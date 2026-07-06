@@ -58,7 +58,7 @@ export function Sidebar() {
           Desenvolvedor Full Stack
         </h2>
         <p className="mt-4 max-w-xs text-pretty leading-relaxed text-muted-foreground">
-          Construo interfaces acessíveis e APIs robustas, da concepção ao deploy.
+          Construo do inicio ao fim. Desde o Front até o Back-end.
         </p>
 
         {/* Navegação - desktop */}
