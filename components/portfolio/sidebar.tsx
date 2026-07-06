@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react"
+import Image from "next/image"
 import { Mail, FileText } from "lucide-react"
 import { GithubIcon, LinkedinIcon } from "./brand-icons"
 
@@ -42,6 +43,14 @@ export function Sidebar() {
   return (
     <header className="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-1/2 lg:flex-col lg:justify-between lg:py-24">
       <div>
+        <Image
+          src="/rogerfernandes.jpeg"
+          alt="Foto de Roger Fernandes"
+          width={128}
+          height={128}
+          priority
+          className="mb-6 h-28 w-28 rounded-full border-2 border-primary/30 object-cover shadow-[0_0_40px_rgba(168,85,247,0.22)] sm:h-32 sm:w-32"
+        />
         <h1 className="text-balance text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
           Roger Fernandes
         </h1>

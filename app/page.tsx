@@ -6,7 +6,7 @@ import { Projects } from "@/components/portfolio/projects"
 
 export default function Page() {
   return (
-    <main className="mx-auto min-h-screen max-w-6xl px-6 py-12 md:px-12 lg:py-0">
+    <main className="relative z-10 mx-auto min-h-screen max-w-6xl px-6 py-12 md:px-12 lg:py-0">
       <div className="lg:flex lg:justify-between lg:gap-12">
         <Sidebar />
         <div className="space-y-24 pt-16 lg:w-1/2 lg:py-24">

@@ -162,8 +162,23 @@
   }
   body {
     @apply bg-background text-foreground;
+    position: relative;
+    min-height: 100vh;
+    overflow-x: hidden;
   }
   html {
     @apply font-sans;
   }
+}
+
+.portfolio-globe-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  display: block;
+  width: 100%;
+  min-height: 100vh;
+  pointer-events: none;
+  opacity: 0.55;
 }
